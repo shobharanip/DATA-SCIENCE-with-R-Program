@@ -1,13 +1,18 @@
-# DATA-SCIENCE-with-R-Program
-
-Introduction
+# Data Science project with R Program
+# Introduction
 R is a powerful language used widely for data analysis and statistical computing. It was developed in early 90s. Since then, endless efforts have been made to improve R’s user interface. The journey of R language from a rudimentary text editor to interactive R Studio and more recently Jupyter Notebooks has engaged many data science communities across the world.
 This was possible only because of generous contributions by R users globally. Inclusion of powerful packages in R has made it more and more powerful with time. Packages such as dplyr, tidyr, readr, data.table, SparkR, ggplot2 have made data manipulation, visualization and computation much faster.
 But, what about Machine Learning ?
 My first impression of R was that it’s just a software for statistical computing. Good thing, I was wrong! R has enough provisions to implement machine learning algorithms in a fast and simple manner.
 This is a complete notebook to learn data science and machine learning using R. By the end of this notebook, you will have a good exposure to building predictive models using machine learning on your own.
 Note: No prior knowledge of data science / analytics is required. However, prior knowledge of algebra and statistics will be helpful.
-Table of Contents
+
+________________________________________
+I hope you find this kernel helpful and some UPVOTES would be very much appreciated
+________________________________________
+
+
+## Table of Contents
 1.	Basics of R Programming for Data Science
 o	Why learn R ?
 o	How to install R / R Studio ?
@@ -32,7 +37,7 @@ o	Random Forest
 Let’s get started !
 Note: The data set used in this article is from Big Mart Sales Prediction.
  
-1. Basics of R Programming
+## 1. Basics of R Programming
 Why learn R ?
 I don’t know if I have a solid reason to convince you, but let me share what got me started. I have no prior coding experience. Actually, I never had computer science in my subjects. I came to know that to learn data science, one must learn either R or Python as a starter. I chose the former. Here are some benefits I found after using R:
 1.	The style of coding is quite easy.
@@ -43,7 +48,7 @@ I don’t know if I have a solid reason to convince you, but let me share what g
 6.	One of highly sought skill by analytics and data science companies.
 There are many more benefits. But, these are the ones which have kept me going. If you think they are exciting, stick around and move to next section. 
  
-How to install R / R Studio ?
+## How to install R / R Studio ?
 You could download and install RStudio. It provides much better coding experience. For Windows users, R Studio is available for Windows Vista and above versions. Follow the steps below for installing R Studio:
 1.	 Go to https://www.rstudio.com/products/rstudio/download/
 2.	 In ‘Installers for Supported Platforms’ section, choose and click the R Studio installer based on your operating system. The download should begin as soon as you click.
@@ -57,13 +62,13 @@ Let’s quickly understand the interface of R Studio:
 3.	R environment: This space displays the set of external elements added. This includes data set, variables, vectors, functions etc. To check if data has been loaded properly in R, always look at this area.
 4.	Graphical Output: This space display the graphs created during exploratory data analysis. Not just graphs, you could select packages, seek help with embedded R’s official documentation.
  
-How to install R Packages ?
+## How to install R Packages ?
 The sheer power of R lies in its incredible packages. In R, most data handling tasks can be performed in 2 ways: Using R packages and R base functions. In this notebook, I’ll also introduce you with the most handy and powerful R packages. To install a package, simply type:
 install.packages("package name")
 As a first time user, a pop might appear to select your CRAN mirror (country server), choose accordingly and press OK.
 Note: You can type this either in console directly and press ‘Enter’ or in R script and click ‘Run’.
  
-Basic Computations in R
+## Basic Computations in R
 Let’s begin with basics. To get familiar with R coding environment, start with some basic calculations. R console can be used as an interactive calculator too. Type the following in your console:
 > 2 + 3
 > 5 
@@ -75,18 +80,21 @@ Let’s begin with basics. To get familiar with R coding environment, start with
 > 1.07
 > sqrt (121)
 > 11
+
 Similarly, you can experiment various combinations of calculations and get the results. In case, you want to obtain the previous calculation, this can be done in two ways. First, click in R console, and press ‘Up / Down Arrow’  key on your keyboard. This will activate the previously executed commands. Press Enter.
 But, what if you have done too many calculations ? It would be too painful to scroll through every command and find it out. In such situations, creating variable is a helpful way.
 In R, you can create a variable using <- or = sign. Let’s say I want to create a variable x to compute the sum of 7 and 8. I’ll write it as:
 > x <- 8 + 7
 > x
 > 15
+
 Once we create a variable, you no longer get the output directly (like calculator), unless you call the variable in the next line. Remember, variables can be alphabets, alphanumeric but not numeric. You can’t create numeric variables.
  
-2. Essentials of R Programming
+## 2. Essentials of R Programming
 Understand and practice this section thoroughly. This is the building block of your R programming knowledge. If you get this right, you would face less trouble in debugging.
 R has five basic or ‘atomic’ classes of objects. Wait, what is an object ?
-Everything you see or create in R is an object. A vector, matrix, data frame, even a variable is an object. R treats it that way. So, R has 5 basic classes of objects. This includes:
+Everything you see or create in R is an object. A vector, matrix, data frame, even a variable is an object. R treats it that way. So, R has 5 basic classes of objects. 
+This includes:
 1.	Character
 2.	Numeric (Real Numbers)
 3.	Integer (Whole Numbers)
@@ -104,17 +112,20 @@ For example: Let’s create vectors of different classes. We can create vector u
 > b <- c(1 + 2i, 3 - 6i) #complex
 > d <- c(23, 44)   #integer
 > e <- vector("logical", length = 5)
+
 Similarly, you can create vector of various classes.
  
-Data Types in R
+## Data Types in R
 R has various type of ‘data types’ which includes vector (numeric, integer etc), matrices, data frames and list. Let’s understand them one by one.
 Vector: As mentioned above, a vector contains object of same class. But, you can mix objects of different classes too. When objects of different classes are mixed in a list, coercion occurs. This effect causes the objects of different types to ‘convert’ into one class. For example:
 > qt <- c("Time", 24, "October", TRUE, 3.33)  #character
 > ab <- c(TRUE, 24) #numeric
 > cd <- c(2.5, "May") #character
+
 To check the class of any object, use class(“vector name”) function.
 > class(qt)
  "character"
+ 
 To convert the class of a vector, you can use as. command.
 > bar <- 0:5
 > class(bar)
@@ -125,6 +136,7 @@ To convert the class of a vector, you can use as. command.
 > as.character(bar)
 > class(bar)
 > "character"
+
 Similarly, you can change the class of any vector. But, you should pay attention here. If you try to convert a “character” vector to “numeric” , NAs will be introduced. Hence, you should be careful to use this command.
  
 List: A list is a special type of vector which contain elements of different data types. For example:
@@ -138,9 +150,11 @@ List: A list is a special type of vector which contain elements of different dat
 [1] TRUE
 [[4]]
 [1] 1+2i
+
 As you can see, the output of a list is different from a vector. This is because, all the objects are of different types. The double bracket [[1]] shows the index of first element and so on. Hence, you can easily extract the element of lists depending on their index. Like this:
 > my_list[[3]]
 > [1] TRUE
+
 You can use [] single bracket too. But, that would return the list element with its index number, instead of the result above. Like this:
 > my_list[3]
 > [[1]]
@@ -190,7 +204,8 @@ x    y
 > class(cbind(x, y))
 [1] “matrix”
  
-Data Frame: This is the most commonly used member of data types family. It is used to store tabular data. It is different from matrix. In a matrix, every element must have same class. But, in a data frame, you can put list of vectors containing different classes. This means, every column of a data frame acts like a list. Every time you will read data in R, it will be stored in the form of a data frame. Hence, it is important to understand the majorly used commands on data frame:
+## Data Frame: 
+This is the most commonly used member of data types family. It is used to store tabular data. It is different from matrix. In a matrix, every element must have same class. But, in a data frame, you can put list of vectors containing different classes. This means, every column of a data frame acts like a list. Every time you will read data in R, it will be stored in the form of a data frame. Hence, it is important to understand the majorly used commands on data frame:
 > df <- data.frame(name = c("ash","jane","paul","mark"), score = c(67,56,87,91))
 > df
 name score
@@ -250,7 +265,7 @@ name score
 3 paul 87
 4 mark 91
  
-Control Structures in R
+## Control Structures in R
 As the name suggest, a control structure ‘controls’ the flow of code / commands written inside a function. A function is a set of multiple commands written to automate a repetitive coding task.
 For example: You have 10 data sets. You want to find the mean of ‘Age’ column present in every data set. This can be done in 2 ways: either you write the code to compute mean 10 times or you simply create a function and pass the data set to it.
 Let’s understand the control structures in R with simple examples:
@@ -307,17 +322,20 @@ There are other control structures as well but are less frequently used than exp
 4.	return – It help to exit a function
 Note: If you find the section ‘control structures’ difficult to understand, not to worry. R is supported by various packages to compliment the work done by control structures.
  
-Useful R Packages
+## Useful R Packages
 Out of ~7800 packages listed on CRAN, I’ve listed some of the most powerful and commonly used packages in predictive modeling in this article. Since, I’ve already explained the method of installing packages, you can go ahead and install them now. Sooner or later you’ll need them.
 Importing Data: R offers wide range of packages for importing data available in any format such as .txt, .csv, .json, .sql etc. To import large files of data quickly, it is advisable to install and use data.table, readr, RMySQL, sqldf, jsonlite.
-Data Visualization: R has in built plotting commands as well. They are good to create simple graphs. But, becomes complex when it comes to creating advanced graphics. Hence, you should install ggplot2.
-Data Manipulation: R has a fantastic collection of packages for data manipulation. These packages allows you to do basic & advanced computations quickly. These packages are dplyr, plyr, tidyr, lubridate, stringr. Check out this complete notebook on data manipulation packages in R.
+
+## Data Visualization: 
+R has in built plotting commands as well. They are good to create simple graphs. But, becomes complex when it comes to creating advanced graphics. Hence, you should install ggplot2.
+## Data Manipulation: 
+R has a fantastic collection of packages for data manipulation. These packages allows you to do basic & advanced computations quickly. These packages are dplyr, plyr, tidyr, lubridate, stringr. Check out this complete notebook on data manipulation packages in R.
 Modeling / Machine Learning: For modeling, caret package in R is powerful enough to cater to every need for creating machine learning model. However, you can install packages algorithms wise such as randomForest, rpart, gbm etc
 Note: I’ve only mentioned the commonly used packages. You might like to check this interesting infographic on complete list of useful R packages.
 Till here, you became familiar with the basic work style in R and its associated components. From next section, we’ll begin with predictive modeling. But before you proceed. I want you to practice, what you’ve learnt till here.
 Practice Assignment:  As a part of this assignment, install ‘swirl’ package in package. Then type, library(swirl)to initiate the package.  And, complete this interactive R notebook. If you have followed this article thoroughly, this assignment should be an easy task for you!
  
-3. Exploratory Data Analysis in R
+**## 3. Exploratory Data Analysis in R** 
 From this section onwards, we’ll dive deep into various stages of predictive modeling. Hence, make sure you understand every aspect of this section. In case you find anything difficult to understand, ask me in the comments section below.
 Data Exploration is a crucial stage of predictive model. You can’t build great and practical models unless you learn to explore the data from begin to end. This stage forms a concrete foundation for data manipulation (the very next stage). Let’s understand it in R.
 In this notebook, I’ve taken the data set from Big Mart Sales Prediction. Before we start, you must get familiar with these terms:
@@ -361,6 +379,7 @@ $ Outlet_Size : Factor w/ 4 levels "","High","Medium",..: 3 3 3 1 2 3 2 3 1 1 ..
 $ Outlet_Location_Type : Factor w/ 3 levels "Tier 1","Tier 2",..: 1 3 1 3 3 3 3 3 2 2 ...
 $ Outlet_Type : Factor w/ 4 levels "Grocery Store",..: 2 3 2 1 2 3 2 4 2 2 ...
 $ Item_Outlet_Sales : num 3735 443 2097 732 995 ...
+
 Let’s do some quick data exploration.
 To begin with, I’ll first check if this data has missing values. This can be done by using:
 > table(is.na(train))
@@ -389,7 +408,7 @@ Here are some quick inferences drawn from variables in train data set:
 4.	Outlet_Size has a unmatched factor levels.
 These inference will help us in treating these variable more accurately.
  
-Graphical Representation of Variables
+## Graphical Representation of Variables
 I’m sure you would understand these variables better when explained visually. Using graphs, we can analyze the data in 2 ways: Univariate Analysis and Bivariate Analysis.
 Univariate analysis is done with one variable. Bivariate analysis is done with two variables. Univariate analysis is a lot easy to do. Hence, I’ll skip that part here. I’d recommend you to try it at your end. Let’s now experiment doing bivariate analysis and carve out hidden insights.
 For visualization, I’ll use ggplot2 package. These graphs would help us understand the distribution and frequency of variables in the data set.
@@ -416,18 +435,22 @@ Let’s first combine the data sets. This will save our time as we don’t need 
 Test data set has one less column (response variable). Let’s first add the column. We can give this column any value. An intuitive approach would be to extract the mean value of sales from train data set and use it as placeholder for test variable Item _Outlet_ Sales. Anyways, let’s make it simple for now. I’ve taken a value 1. Now, we’ll combine the data sets.
 > test$Item_Outlet_Sales <-  1
 > combi <- rbind(train, test)
+
 Impute missing value by median. I’m using median because it is known to be highly robust to outliers. Moreover, for this problem, our evaluation metric is RMSE which is also highly affected by outliers. Hence, median is better in this case.
+
 > combi$Item_Weight[is.na(combi$Item_Weight)] <- median(combi$Item_Weight, na.rm = TRUE)
 > table(is.na(combi$Item_Weight))
 FALSE 
 14204
  
-Trouble with Continuous Variables & Categorical Variables
+##  Trouble with Continuous Variables & Categorical Variables
 It’s important to learn to deal with continuous and categorical variables separately in a data set. In other words, they need special attention. In this data set, we have only 3 continuous variables and rest are categorical in nature. If you are still confused, I’ll suggest you to once again look at the data set using str() and proceed.
 Let’s take up Item_Visibility. In the graph above, we saw item visibility has zero value also, which is practically not feasible. Hence, we’ll consider it as a missing value and once again make the imputation using median.
 > combi$Item_Visibility <- ifelse(combi$Item_Visibility == 0,
                            median(combi$Item_Visibility), combi$Item_Visibility) 
+
 Let’s proceed to categorical variables now. During exploration, we saw there are mis-matched levels in variables which needs to be corrected.
+
 > levels(combi$Outlet_Size)[1] <- "Other"
 > library(plyr)
 > combi$Item_Fat_Content <- revalue(combi$Item_Fat_Content,
@@ -436,13 +459,15 @@ c("LF" = "Low Fat", "reg" = "Regular"))
 > table(combi$Item_Fat_Content)
   Low Fat Regular 
   9185    5019
+  
 Using the commands above, I’ve assigned the name ‘Other’ to unnamed level in Outlet_Size variable. Rest, I’ve simply renamed the various levels of Item_Fat_Content.
  
-4. Data Manipulation in R
+## 4. Data Manipulation in R
 Let’s call it as, the advanced level of data exploration. In this section we’ll practically learn about feature engineering and other useful aspects.
 Feature Engineering: This component separates an intelligent data scientist from a technically enabled data scientist. You might have access to large machines to run heavy computations and algorithms, but the power delivered by new features, just can’t be matched. We create new variables to extract and provide as much ‘new’ information to the model, to help it make accurate predictions.
 If you have been thinking all this time, great. But now is the time to think deeper. Look at the data set and ask yourself, what else (factor) could influence Item_Outlet_Sales ? Anyhow, the answer is below. But, I want you to try it out first, before scrolling down.
-1. Count of Outlet Identifiers – There are 10 unique outlets in this data. This variable will give us information on count of outlets in the data set. More the number of counts of an outlet, chances are more will be the sales contributed by it.
+## 1. Count of Outlet Identifiers – 
+There are 10 unique outlets in this data. This variable will give us information on count of outlets in the data set. More the number of counts of an outlet, chances are more will be the sales contributed by it.
 > library(dplyr)
 > a <- combi%>%
             group_by(Outlet_Identifier)%>%
@@ -458,9 +483,11 @@ Source: local data frame [6 x 2] Outlet_Identifier n
 6 OUT027         1559
 > names(a)[2] <- "Outlet_Count"
 > combi <- full_join(a, combi, by = "Outlet_Identifier")
+
 As you can see, dplyr package makes data manipulation quite effortless. You no longer need to write long function. In the code above, I’ve simply stored the new data frame in a variable a. Later, the new column Outlet_Count is added in our original ‘combi’ data set. To know more about dplyr, follow this notebook.
  
-2. Count of Item Identifiers – Similarly, we can compute count of item identifiers too. It’s a good practice to fetch more information from unique ID variables using their count. This will help us to understand, which outlet has maximum frequency.
+## 2. Count of Item Identifiers – 
+Similarly, we can compute count of item identifiers too. It’s a good practice to fetch more information from unique ID variables using their count. This will help us to understand, which outlet has maximum frequency.
 > b <- combi%>%
           group_by(Item_Identifier)%>%
           tally()
@@ -476,7 +503,8 @@ Item_Identifier   Item_Count
 6 DRB24             8
 > combi <- merge(b, combi, by = “Item_Identifier”)
  
-3. Outlet Years – This variable represent the information of existence of a particular outlet since year 2013. Why just 2013? You’ll find the answer in problem statement here. My hypothesis is, older the outlet, more footfall, large base of loyal customers and larger the outlet sales.
+## 3. Outlet Years – 
+This variable represent the information of existence of a particular outlet since year 2013. Why just 2013? You’ll find the answer in problem statement here. My hypothesis is, older the outlet, more footfall, large base of loyal customers and larger the outlet sales.
 > c <- combi%>%
            select(Outlet_Establishment_Year)%>% 
            mutate(Outlet_Year = 2013 - combi$Outlet_Establishment_Year)
@@ -491,23 +519,28 @@ Outlet_Establishment_Year  Outlet_Year
 > combi <- full_join(c, combi)
 This suggests that outlets established in 1999 were 14 years old in 2013 and so on.
  
-4. Item Type New – Now, pay attention to Item_Identifiers. We are about to discover a new trend. Look carefully, there is a pattern in the identifiers starting with “FD”,”DR”,”NC”. Now, check the corresponding Item_Types to these identifiers in the data set. You’ll discover, items corresponding to “DR”,  are mostly eatables. Items corresponding to “FD”, are drinks. And, item corresponding to “NC”, are products which can’t be consumed, let’s call them non-consumable. Let’s extract these variables into a new variable representing their counts.
+## 4 Item Type New – 
+Now, pay attention to Item_Identifiers. We are about to discover a new trend. Look carefully, there is a pattern in the identifiers starting with “FD”,”DR”,”NC”. Now, check the corresponding Item_Types to these identifiers in the data set. You’ll discover, items corresponding to “DR”,  are mostly eatables. Items corresponding to “FD”, are drinks. And, item corresponding to “NC”, are products which can’t be consumed, let’s call them non-consumable. Let’s extract these variables into a new variable representing their counts.
 Here I’ll use substr(), gsub() function to extract and rename the variables respectively.
 > q <- substr(combi$Item_Identifier,1,2)
 > q <- gsub("FD","Food",q)
 > q <- gsub("DR","Drinks",q)
 > q <- gsub("NC","Non-Consumable",q)
 > table(q)
+
    Drinks Food  Non-Consumable 
    1317   10201 2686
+   
 Let’s now add this information in our data set with a variable name ‘Item_Type_New.
 > combi$Item_Type_New <- q
 I’ll leave the rest of feature engineering intuition to you. You can think of more variables which could add more information to the model. But make sure, the variable aren’t correlated. Since, they are emanating from a same set of variable, there is a high chance for them to be correlated. You can check the same in R using cor()function.
  
-Label Encoding and One Hot Encoding
+## Label Encoding and One Hot Encoding:
 Just, one last aspect of feature engineering left. Label Encoding and One Hot Encoding.
 Label Encoding, in simple words, is the practice of numerically encoding (replacing) different levels of a categorical variables. For example: In our data set, the variable Item_Fat_Content has 2 levels: Low Fat and Regular. So, we’ll encode Low Fat as 0 and Regular as 1. This will help us convert a factor variable in numeric variable. This can be simply done using if else statement in R.
+
 > combi$Item_Fat_Content <- ifelse(combi$Item_Fat_Content == "Regular",1,0)
+
 One Hot Encoding, in simple words, is the splitting a categorical variable into its unique levels, and eventually removing the original variable from data set. Confused ? Here’s an example: Let’s take any categorical variable, say, Outlet_ Location_Type. It has 3 levels. One hot encoding of this variable, will create 3 different variables consisting of 1s and 0s. 1s will represent the existence of variable and 0s will represent non-existence of variable. Let look at a sample:
 > sample <- select(combi, Outlet_Location_Type)
 > demo_sample <- data.frame(model.matrix(~.-1,sample))
@@ -541,18 +574,21 @@ $ Year : num 14 11 15 26 6 9 28 4 16 28 ...
 $ Item_Type_New_Drinks : int 1 1 1 1 1 1 1 1 1 1 ...
 $ Item_Type_New_Food : int 0 0 0 0 0 0 0 0 0 0 ...
 $ Item_Type_New_Non-Consumable : int 0 0 0 0 0 0 0 0 0 0 ...
+
 As you can see, after one hot encoding, the original variables are removed automatically from the data set.
  
-5. Predictive Modeling using Machine Learning
+## 5. Predictive Modeling using Machine Learning
+
 Finally, we’ll drop the columns which have either been converted using other variables or are identifier variables. This can be accomplished using select from dplyr package.
 > combi <- select(combi, -c(Item_Identifier, Outlet_Identifier, Item_Fat_Content,                                Outlet_Establishment_Year,Item_Type))
 > str(combi)
+
 In this section, I’ll cover Regression, Decision Trees and Random Forest. A detailed explanation of these algorithms is outside the scope of this article. These algorithms have been satisfactorily explained in our previous articles. I’ve provided the links for useful resources.
 As you can see, we have encoded all our categorical variables. Now, this data set is good to take forward to modeling. Since, we started from Train and Test, let’s now divide the data sets.
 > new_train <- combi[1:nrow(train),]
 > new_test <- combi[-(1:nrow(train)),]
  
-Linear (Multiple) Regression
+# Linear (Multiple) Regression
 Multiple Regression is used when response variable is continuous in nature and predictors are many. Had it been categorical, we would have used Logistic Regression. Before you proceed, sharpen your basics of Regression here.
 Linear Regression takes following assumptions:
 1.	There exists a linear relationship between response and predictor variables
@@ -580,7 +616,9 @@ Let’s try to create a more robust regression model. This time, I’ll be using
 #load data
 > train <- read.csv("train_Big.csv")
 > test <- read.csv("test_Big.csv")
+
 #create a new variable in test file 
+
 > test$Item_Outlet_Sales <- 1
 #combine train and test data
 > combi <- rbind(train, test)
@@ -605,7 +643,9 @@ Let’s try to create a more robust regression model. This time, I’ll be using
 #linear regression
 > linear_model <- lm(Item_Outlet_Sales ~ ., data = new_train)
 > summary(linear_model)
+
 Now we have got R² = 0.5623. This teaches us that, sometimes all you need is simple thought process to get high accuracy. Quite a good improvement from previous model. Next, time when you work on any model, always remember to start with a simple model.
+
 Let’s check out regression plot to find out more ways to improve this model.
 > par(mfrow=c(2,2))
 > plot(linear_model)
@@ -626,9 +666,10 @@ To calculate RMSE, we can load a package named Metrics.
 [1] 1140.004
 Let’s proceed to decision tree algorithm and try to improve our RMSE score.
  
-Decision Trees
+## Decision Trees
 Before you start, I’d recommend you to glance through the basics of decision tree algorithms. To understand what makes it superior than linear regression, In R, decision tree algorithm can be implemented using rpart package. In addition, we’ll use caret package for doing cross validation. Cross validation is a technique to build robust models which are not prone to overfitting. Read more about Cross Validation.
 In R, decision tree uses a complexity parameter (cp). It measures the tradeoff between model complexity and accuracy on training set. A smaller cp will lead to a bigger tree, which might overfit the model. Conversely, a large cp value might underfit the model. Underfitting occurs when the model does not capture underlying trends properly. Let’s find out the optimum cp value for our model with 5 fold cross validation.
+
 #loading required libraries
 > library(rpart)
 > library(e1071)
@@ -640,6 +681,7 @@ In R, decision tree uses a complexity parameter (cp). It measures the tradeoff b
 #decision tree
 > tree_model <- train(Item_Outlet_Sales ~ ., data = new_train, method = "rpart", trControl = fitControl, tuneGrid = cartGrid)
 > print(tree_model)
+
 The final value for cp = 0.01. You can also check the table populated in console for more information. The model with cp = 0.01 has the least RMSE. Let’s now build a decision tree with 0.01 as complexity parameter.
 > main_tree <- rpart(Item_Outlet_Sales ~ ., data = new_train, control = rpart.control(cp=0.01))
 > prp(main_tree)
@@ -650,7 +692,7 @@ Here is the tree structure of our model. If you have gone through the basics, yo
 [1] 1102.774
 As you can see, our RMSE has further improved from 1140 to 1102.77 with decision tree.  To improve this score further, you can further tune the parameters for greater accuracy.
  
-Random Forest
+## Random Forest
 Random Forest is a powerful algorithm which holistically takes care of missing values, outliers and other non-linearities in the data set. It’s simply a collection of classification trees, hence the name ‘forest’. I’d suggest you to quickly refresh your basics of random forest with this notebook.
 In R, random forest algorithm can be implement using randomForest package. Again, we’ll use train package for cross validation and finding optimum value of model parameters.
 For this problem, I’ll focus on two parameters of random forest. mtry and ntree.  ntree is the number of trees to be grown in the forest. mtry is the number of variables taken at each node to build a tree. And, we’ll do a 5 fold cross validation.
@@ -683,7 +725,7 @@ When predicted on out of sample data, our RMSE has come out to be 1174.33. Here 
 4.	Build an ensemble of these models. Read more about Ensemble Modeling.
 Do implement the ideas suggested above and share your improvement in the comments section below. Currently, Rank 1 on Leaderboard has obtained RMSE score of 1137.71. Beat it!
  
-End Notes
+## End Notes
 This brings us to the end of this notebook. I’ve given you enough hints to work on. The decision to not use encoded variables in the model, turned out to be beneficial until decision trees.
 The motive of this notebook was to get your started with predictive modeling in R. We learnt few uncanny things such as ‘build simple models’. Don’t jump towards building a complex model. Simple models give you benchmark score and a threshold to work with.
 In this notebook, I have demonstrated the steps used in predictive modeling in R. I’ve covered data exploration, data visualization, data manipulation and building models using Regression, Decision Trees and Random Forest algorithms.
